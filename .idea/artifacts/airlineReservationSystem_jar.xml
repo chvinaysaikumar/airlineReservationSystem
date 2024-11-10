@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="airlineReservationSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/airlineReservationSystem_jar</output-path>
+    <root id="archive" name="airlineReservationSystem.jar">
+      <element id="module-output" name="airlineReservationSystem" />
+      <element id="library" level="project" name="java" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../apache-tomcat-9.0.95-windows-x64.zip" path-in-jar="/apache-tomcat-9.0.95/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="SmartTomcatPro.war" name="Maven : org.airlineReservationSystem : AirlineReservationSystem.war [exploded] archive">
+    <output-path>$PROJECT_DIR$/out/artifacts/Maven___org_airlineReservationSystem___AirlineReservationSystem_war__exploded__archive</output-path>
+    <root id="archive" name="Maven _ org.airlineReservationSystem _ AirlineReservationSystem.war [exploded] archive.war">
+      <element id="artifact" artifact-name="Maven : org.airlineReservationSystem : AirlineReservationSystem.war [exploded]" />
+    </root>
+  </artifact>
+</component>

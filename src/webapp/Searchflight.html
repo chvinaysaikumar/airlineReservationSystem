@@ -1,0 +1,154 @@
+<!-- Main HTML and CSS for Flight Search Page -->
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Flight Search</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    /* Flight Search Page CSS */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+    }
+    .header, .footer {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .search-bar, .filters, .results {
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .search-bar input, .search-bar select, .search-bar button {
+        padding: 10px;
+        margin: 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .search-bar button, .buy-tickets button {
+        background-color: #00b300;
+        color: white;
+        cursor: pointer;
+    }
+    .filters label, .results .result {
+        margin: 10px 0;
+    }
+    .results .result {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .results .result .details {
+        flex: 1;
+    }
+    .results .result .reserve {
+        background-color: #0066cc;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .buy-tickets {
+        text-align: center;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<!-- Header -->
+<div class="header">
+  <div class="time">7:11 PM Wed 9 Oct</div>
+</div>
+
+<!-- Search Bar with Form for Flight Search -->
+<div class="search-bar">
+  <form action="SearchFlightServlet" method="GET">
+    <div>
+      <button type="button">One-way</button>
+      <button type="button" style="background-color: #00b300;">Round-trip</button>
+    </div>
+    <div>
+      <input type="text" name="departure" placeholder="Enter Departure City" required value="Delhi, India (DEL)">
+      <i class="fas fa-exchange-alt"></i>
+      <input type="text" name="destination" placeholder="Enter Destination City" required value="Vijayawada, India (VIJ)">
+    </div>
+    <div>
+      <input type="date" name="departureDate" required value="2024-10-10">
+      <input type="date" name="returnDate" required value="2024-10-12">
+    </div>
+    <div>
+      <select name="passengers" required>
+        <option value="1">1 Adult</option>
+        <option value="2">2 Adults</option>
+      </select>
+      <select name="class" required>
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+      </select>
+    </div>
+    <button type="submit">Search Flights</button>
+  </form>
+</div>
+
+<!-- Filters -->
+<div class="filters">
+  <h3>3 of 12 results</h3>
+  <button>Clear</button>
+  <div>
+    <h4>STOPS</h4>
+    <label><input type="checkbox" checked> Direct rs 7,084</label>
+    <label><input type="checkbox"> 1 stop rs 9,321</label>
+    <label><input type="checkbox"> 2+ stops rs 11,482</label>
+  </div>
+</div>
+
+<!-- Results with Reserve Buttons -->
+<div class="results">
+  <div class="result">
+    <img src="https://storage.googleapis.com/a1aa/image/fbUy9T8zZTRgQ6OIL5kLEzzUkunIfSlm28kyvzViyfgJiVdnA.jpg" alt="IndiGo logo" width="50" height="50">
+    <div class="details">
+      <div class="time">23:25 - 01:05 +1</div>
+      <div class="duration">01h 40m Direct</div>
+    </div>
+    <div class="price">
+      <div>rs 7,344</div>
+      <div class="label">Per person</div>
+    </div>
+    <a href="Reservationform.html?flightId=123" class="reserve">Reserve Seat</a>
+  </div>
+</div>
+
+<!-- Buy Tickets Section -->
+<div class="buy-tickets">
+  <h3>Buy Tickets</h3>
+  <form method="GET" action="Payment.html">
+    <label>Flight ID: <input type="text" name="flightId" required placeholder="Enter Flight ID"></label><br>
+    <label>Passenger Name: <input type="text" name="passengerName" required placeholder="Enter Passenger Name"></label><br>
+    <label>Number of Tickets: <input type="number" name="ticketCount" min="1" required></label><br>
+    <button type="submit">Buy Tickets</button>
+  </form>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="nav">
+    <a href="#"><i class="fas fa-arrow-left"></i></a>
+    <a href="#"><i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="nav">
+    <a href="#"><i class="fas fa-home"></i></a>
+    <a href="#"><i class="fas fa-envelope"></i></a>
+  </div>
+</div>
+</body>
+
+</html>

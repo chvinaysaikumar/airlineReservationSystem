@@ -1,0 +1,182 @@
+<html>
+<head>
+    <title>Payment Options</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        /* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Centering the container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+}
+
+/* Styling the main container */
+.container {
+    width: 400px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling the header */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.header .number {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.header .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Form content styling */
+.content h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.option input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.option img {
+    margin-left: auto;
+    height: 40px; /* Increase the image size */
+    width: auto;
+}
+
+.button-container {
+    margin-top: 1.5rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+    </style>
+    <script>
+        function showCardDetailsForm() {
+            document.getElementById('cardDetailsForm').style.display = 'block';
+        }
+
+        function processPayment(event) {
+            event.preventDefault();
+            document.getElementById("paymentForm").submit();
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="title">Payment</div>
+    </div>
+
+    <!-- Main Payment Form -->
+    <form id="paymentForm" action="PaymentServlet" method="post" onsubmit="return false;">
+        <div class="content">
+            <h2>How would you like to pay?</h2>
+
+            <!-- Payment Amount -->
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required step="0.01" placeholder="Enter amount" /><br /><br />
+
+            <!-- Payment Options -->
+            <div class="option">
+                <input type="radio" name="paymentOption" value="Credit/Debit Card" onclick="showCardDetailsForm()" required />
+                <label>Credit or Debit Card</label>
+                <img alt="Credit or Debit Card Logos" height="30" src="https://storage.googleapis.com/a1aa/image/nMzO8j0iesQJCa6JbuTD2uOr4bfgblLIcwUJ5WqEaScFMsuTA.jpg" width="150"/>
+            </div>
+            <div class="option">
+                <input type="radio" name="paymentOption" value="PayPal" onclick="showCardDetailsForm()" required />
+                <label>PayPal</label>
+                <img alt="PayPal Logo" height="30" src="https://storage.googleapis.com/a1aa/image/kZntoioxPmq2HtJ874WpVMah0S8VhTdG6u2shP1PGCFCDr7E.jpg" width="50"/>
+            </div>
+
+            <!-- Transaction ID (for tracking unique transactions) -->
+            <label for="transactionId">Transaction ID:</label>
+            <input type="text" id="transactionId" name="transactionId" required placeholder="Enter transaction ID" /><br /><br />
+
+            <!-- Payment Status -->
+            <label for="status">Payment Status:</label>
+            <select id="status" name="status" required>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="Failed">Failed</option>
+            </select><br /><br />
+
+            <div class="button-container">
+                <!-- Link to the payment details page -->
+                <a href="Paymentdetails.html" class="button">Continue to Pay</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

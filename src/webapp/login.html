@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container img {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-buttons button {
+            width: 32%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .social-buttons button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .divider {
+            position: relative;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .divider:before,
+        .divider:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .divider:before {
+            left: 0;
+        }
+
+        .divider:after {
+            right: 0;
+        }
+
+        form .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        form .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        form .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        form .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: #333;
+            transition: border-color 0.2s ease;
+        }
+
+        form .form-group input:focus {
+            border-color: #666;
+            outline: none;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-container .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 0.75rem;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .remember-me input {
+            margin-right: 0.5rem;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            color: #666;
+        }
+
+        .sign-in-button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .sign-in-button:hover {
+            background-color: #555;
+        }
+
+        .create-account {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+
+        .create-account a {
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .create-account a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img alt="Logo" src="https://storage.googleapis.com/a1aa/image/fKX4shjdvDQPdaP1vQf7QrOYqHtYOei1TuTaTFSiMNjF4e7OB.jpg" width="50" height="50"/>
+    <h2>Welcome back</h2>
+    <p>Please enter your details to sign in</p>
+    <div class="social-buttons">
+        <button><img alt="Google logo" src="https://storage.googleapis.com/a1aa/image/1AnIRUvbECYmFVJ50tBDaviWn94eIKPSiBBpOIb41tee3e7OB.jpg" width="20" height="20"/></button>
+        <button><img alt="Apple logo" src="https://storage.googleapis.com/a1aa/image/7sMp36XffKiIsUKLLppKRy8oMRVVRxHF6ixoABZbVPsDcfdnA.jpg" width="20" height="20"/></button>
+        <button><img alt="Facebook logo" src="https://storage.googleapis.com/a1aa/image/sSCitPWsbVpGN1kmqxZcvOdfGxqqvePqQfbDLkO1eCMCw97OB.jpg" width="20" height="20"/></button>
+    </div>
+    <div class="divider"><span>Or</span></div>
+    <form action="PassengerServlet" method="POST">
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input id="first_name" name="first_name" type="text" placeholder="Enter your first name" required/>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input id="last_name" name="last_name" type="text" placeholder="Enter your last name" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required/>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required/>
+        </div>
+        <div class="form-group">
+            <label for="passport_number">Passport Number</label>
+            <input id="passport_number" name="passport_number" type="text" placeholder="Enter your passport number" required/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input id="password" name="password" type="password" placeholder="Enter your password" required/>
+                <i class="fas fa-eye toggle-password"></i>
+            </div>
+        </div>
+        <div class="form-group remember-me">
+            <input id="remember" type="checkbox"/>
+            <label for="remember">Remember for 30 days</label>
+        </div>
+        <div class="form-group">
+            <a class="forgot-password" href="#">Forgot password?</a>
+        </div>
+        <button class="sign-in-button" type="submit">Sign in</button>
+    </form>
+    <div class="create-account">
+        Don't have an account? <a href="#">Create account</a>
+    </div>
+</div>
+<script>
+    document.querySelector('.toggle-password').addEventListener('click', function () {
+        const passwordInput = document.getElementById('password');
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+</body>
+</html>
